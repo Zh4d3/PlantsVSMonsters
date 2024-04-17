@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
 
-public class Turret : MonoBehaviour {
+public class DartMonkey : MonoBehaviour {
 
     [Header("References")]
-    [SerializeField] private Transform turretRotationPoint;
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
@@ -15,11 +14,10 @@ public class Turret : MonoBehaviour {
     [SerializeField] private Button upgradeButton;
 
     [Header("Attribute")]
-    [SerializeField] private float targetingRange = 5f;
-    [SerializeField] private float rotationSpeed = 5f;
-    [SerializeField] private float bps = 1f;
+    [SerializeField] private float targetingRange = 3.2f;
+    [SerializeField] private float bps = 1.05f;
     [SerializeField] private int damage = 1;
-    [SerializeField] private int baseUpgradeCost = 100;
+    [SerializeField] private int baseUpgradeCost = 170;
 
     private float bpsBase;
     private float targetingRangeBase;
@@ -41,8 +39,6 @@ public class Turret : MonoBehaviour {
             FindTarget();
             return;
         }
-
-        RotateTowardsTarget();
 
         if (!CheckTargetIsInRange()) {
             target = null;
@@ -74,13 +70,6 @@ public class Turret : MonoBehaviour {
 
     private bool CheckTargetIsInRange() {
         return Vector2.Distance(target.position, transform.position) <= targetingRange;
-    }
-
-    private void RotateTowardsTarget() {
-        float angle = Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * Mathf.Rad2Deg - 90f;
-
-        Quaternion targetRotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
-        turretRotationPoint.rotation = Quaternion.RotateTowards(turretRotationPoint.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     public void OpenUpgradeUI() {

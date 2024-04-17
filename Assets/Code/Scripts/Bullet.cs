@@ -13,8 +13,9 @@ public class Bullet : MonoBehaviour {
 
     private Transform target;
 
-    public void SetTarget(Transform _target) {
+    public void SetTarget(Transform _target, int damage) {
         target = _target;
+        bulletDamage = damage;
     }
 
     private void FixedUpdate() {

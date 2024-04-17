@@ -58,6 +58,7 @@ MonoBehaviour:
   targetingRange: 3
   rotationSpeed: 200
   bps: 1
+  baseUpgradeCost: 100
 --- !u!1 &1575994763592177765
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,3 +737,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a01a6a81bb233745a624abbac0b306f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouse_over: 0
