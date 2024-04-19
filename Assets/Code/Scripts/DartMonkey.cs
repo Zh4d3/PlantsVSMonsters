@@ -18,6 +18,8 @@ public class DartMonkey : MonoBehaviour {
     [SerializeField] private float bps = 1.05f;
     [SerializeField] private int damage = 1;
     [SerializeField] private int baseUpgradeCost = 170;
+    [SerializeField] private string towerType = "ground";
+
 
     private float bpsBase;
     private float targetingRangeBase;

@@ -6065,6 +6065,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6621402528795073930, guid: 41d3a30865b1ec64e9c2cf13b76b76ec, type: 3}
   m_PrefabInstance: {fileID: 890235985}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/SceneCheck/Level 10.unity
 --- !u!1001 &923199825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6127,6 +6128,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6621402528795073930, guid: 41d3a30865b1ec64e9c2cf13b76b76ec, type: 3}
   m_PrefabInstance: {fileID: 923199825}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> Stashed changes:Assets/PetsVMonsters.unity
 --- !u!1 &948578846
 GameObject:
   m_ObjectHideFlags: 0
@@ -10241,12 +10244,15 @@ MonoBehaviour:
   - name: Basic Turret
     cost: 100
     prefab: {fileID: 1154229507541181830, guid: d36b0323931fa614590bbe64eb5e8da1, type: 3}
+    towerType: ground
   - name: Slowmo Turret
     cost: 200
     prefab: {fileID: 7542810279805621093, guid: a0d43ae597b1d034894bcdaa3cb0048f, type: 3}
+    towerType: hybrid
   - name: Dart Monkey
     cost: 170
     prefab: {fileID: 1300775646412901449, guid: 021704164055220449584a43e7053963, type: 3}
+    towerType: water
 --- !u!114 &1501043488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13267,7 +13273,7 @@ Transform:
   - {fileID: 847802250}
   - {fileID: 1984611740}
   - {fileID: 1889301864}
-  - {fileID: 923199826}
+  - {fileID: 6621402528543339739}
   - {fileID: 1809185386}
   - {fileID: 560264850}
   - {fileID: 1831161618}
@@ -15536,6 +15542,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6621402528795073930, guid: 41d3a30865b1ec64e9c2cf13b76b76ec, type: 3}
   m_PrefabInstance: {fileID: 2143156487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1697570146448443610
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1914671358}
+    m_Modifications:
+    - target: {fileID: 6830191511770590502, guid: 94d2b9ee39e221f469d8cc223dd11b03, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830191511770590502, guid: 94d2b9ee39e221f469d8cc223dd11b03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830191511770590502, guid: 94d2b9ee39e221f469d8cc223dd11b03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830191511770590502, guid: 94d2b9ee39e221f469d8cc223dd11b03, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830191511770590502, guid: 94d2b9ee39e221f469d8cc223dd11b03, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830191511770590502, guid: 94d2b9ee39e221f469d8cc223dd11b03, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830191511770590502, guid: 94d2b9ee39e221f469d8cc223dd11b03, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830191511770590502, guid: 94d2b9ee39e221f469d8cc223dd11b03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830191511770590502, guid: 94d2b9ee39e221f469d8cc223dd11b03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830191511770590502, guid: 94d2b9ee39e221f469d8cc223dd11b03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401088248967029948, guid: 94d2b9ee39e221f469d8cc223dd11b03, type: 3}
+      propertyPath: m_Name
+      value: Plot (142)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94d2b9ee39e221f469d8cc223dd11b03, type: 3}
+--- !u!4 &6621402528543339739 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6830191511770590502, guid: 94d2b9ee39e221f469d8cc223dd11b03, type: 3}
+  m_PrefabInstance: {fileID: 1697570146448443610}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7097658176425352097
 PrefabInstance:

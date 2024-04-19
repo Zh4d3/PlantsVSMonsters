@@ -12,6 +12,7 @@ public class TurretSlowmo : MonoBehaviour {
     [SerializeField] private float targetingRange = 5f;
     [SerializeField] private float aps = 4f; // attacks per second
     [SerializeField] private float freezeTime = 1f;
+    [SerializeField] private string towerType = "hybrid";
 
     private float timeUntilFire;
 

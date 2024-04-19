@@ -20,6 +20,7 @@ public class Turret : MonoBehaviour {
     [SerializeField] private float bps = 1f;
     [SerializeField] private int damage = 1;
     [SerializeField] private int baseUpgradeCost = 100;
+    [SerializeField] private string towerType = "ground";
 
     private float bpsBase;
     private float targetingRangeBase;
