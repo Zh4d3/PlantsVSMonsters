@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour {
     public Transform[] path;
 
     public int currency;
+    public int health;
 
     private void Awake() {
         main = this;
@@ -17,6 +18,7 @@ public class LevelManager : MonoBehaviour {
 
     private void Start() {
         currency = 200;
+        health = 100;
     }
 
     public void IncreaseCurrency(int amount) {
@@ -31,6 +33,10 @@ public class LevelManager : MonoBehaviour {
             Debug.Log("You do not have enough to purchase this item");
             return false;
         }
+    }
+
+    public void LoseHealth(int amount) {
+        health -= amount;
     }
 
 }
