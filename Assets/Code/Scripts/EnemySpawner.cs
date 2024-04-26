@@ -140,6 +140,9 @@ public class EnemySpawner : MonoBehaviour {
                 enemiesLeftToSpawn.Add(2, 40);
                 enemiesLeftToSpawn.Add(3, 8);
                 break;
+            case 17:
+                enemiesLeftToSpawn.Add(5, 1);
+                break;
             default:
                 Debug.Log("Wave " + currentWave + " not implemented yet!");
                 break;

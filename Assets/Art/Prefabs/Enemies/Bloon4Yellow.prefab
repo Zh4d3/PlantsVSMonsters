@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8734011574358725696}
   - component: {fileID: -1361853956572204666}
   m_Layer: 6
-  m_Name: Blue
+  m_Name: Bloon4Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9743241394bd88d44bb0fa91b86d2b4f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ec03a90a38df1b54eaf9b9795450591b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7686279545043956402}
-  moveSpeed: 1.4
-  attackDamage: 2
+  moveSpeed: 3.2
+  attackDamage: 4
 --- !u!114 &-1361853956572204666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,5 +177,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972f6ac807913fa43b84a2d588147c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 2
-  currencyWorth: 2
+  hitPoints: 4
+  currencyWorth: 4
