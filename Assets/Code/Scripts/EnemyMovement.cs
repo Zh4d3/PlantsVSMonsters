@@ -9,10 +9,11 @@ public class EnemyMovement : MonoBehaviour {
 
     [Header("Attributes")]
     [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] public string enemyType = "ground";
+
 
     private Transform target;
     private int pathIndex = 0;
-
     private float baseSpeed;
 
     public void Start() {
