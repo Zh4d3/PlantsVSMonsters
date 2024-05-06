@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour {
 
     public int currency;
     public int health;
+    public int round;
 
     private void Awake() {
         main = this;
@@ -19,6 +20,7 @@ public class LevelManager : MonoBehaviour {
     private void Start() {
         currency = 200;
         health = 100;
+        round = 1;
     }
 
     public void IncreaseCurrency(int amount) {
@@ -36,7 +38,19 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void LoseHealth(int amount) {
-        health -= amount;
+        if (amount >= health)
+        {
+            health = 0;
+            Debug.Log("Game Over");
+        } else
+        {
+            health -= amount;
+        }
+    }
+
+    public void IncreaseRound()
+    {
+        round++;
     }
 
 }

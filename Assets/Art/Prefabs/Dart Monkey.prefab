@@ -215,8 +215,9 @@ MonoBehaviour:
   upgradeButton: {fileID: 4360441449185817461}
   targetingRange: 3.2
   bps: 1.05
-  damage: 2
+  damage: 1
   baseUpgradeCost: 170
+  towerType: ground
 --- !u!1 &1547816922494381252
 GameObject:
   m_ObjectHideFlags: 0
