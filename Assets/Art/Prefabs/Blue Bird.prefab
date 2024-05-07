@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7290817197606647370}
   - component: {fileID: 1807724390000041326}
-  - component: {fileID: 5874251396089967001}
+  - component: {fileID: 3155919557538193667}
   m_Layer: 0
   m_Name: Blue Bird
   m_TagString: Untagged
@@ -194,7 +194,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5874251396089967001
+--- !u!114 &3155919557538193667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,19 +203,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1300775646412901449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b004e63a37c1e5841bd184f82f1febee, type: 3}
+  m_Script: {fileID: 11500000, guid: 804bdd8329dcdd042b357e8572db3c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMask:
     serializedVersion: 2
-    m_Bits: 64
-  bulletPrefab: {fileID: 3933779628820494733, guid: 73fc02fcde3f2934da7af7228be1ee4a, type: 3}
-  firingPoint: {fileID: 2416045989057235268}
-  upgradeUI: {fileID: 3972572388735885400}
-  upgradeButton: {fileID: 4360441449185817461}
+    m_Bits: 0
+  bulletPrefab: {fileID: 0}
+  firingPoint: {fileID: 0}
+  upgradeUI: {fileID: 0}
+  upgradeButton: {fileID: 0}
   targetingRange: 3.2
   bps: 1.05
-  damage: 2
+  damage: 1
   baseUpgradeCost: 170
   towerType: flying
 --- !u!1 &1547816922494381252

@@ -18,7 +18,7 @@ public class BlueBird : MonoBehaviour {
     [SerializeField] private float bps = 1.05f;
     [SerializeField] private int damage = 1;
     [SerializeField] private int baseUpgradeCost = 170;
-    [SerializeField] private string towerType = "ground";
+    [SerializeField] private string towerType = "flying";
 
 
     private float bpsBase;

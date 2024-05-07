@@ -165,6 +165,7 @@ MonoBehaviour:
   rb: {fileID: 7686279545043956402}
   moveSpeed: 1.4
   attackDamage: 2
+  enemyType: flying
 --- !u!114 &-1361853956572204666
 MonoBehaviour:
   m_ObjectHideFlags: 0

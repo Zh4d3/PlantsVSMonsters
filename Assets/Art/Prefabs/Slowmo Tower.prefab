@@ -103,3 +103,4 @@ MonoBehaviour:
   targetingRange: 2
   aps: 0.25
   freezeTime: 1
+  towerType: hybrid

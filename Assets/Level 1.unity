@@ -2977,7 +2977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 466.38797, y: 21.278599}
+  m_AnchoredPosition: {x: 434.4, y: 13.5}
   m_SizeDelta: {x: 22.190186, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &300926633
@@ -9261,7 +9261,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 515.16974, y: 13.000661}
+  m_AnchoredPosition: {x: 483.18176, y: 5.222059}
   m_SizeDelta: {x: 347.1902, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &835178433
@@ -12564,8 +12564,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currencyUI: {fileID: 1726224883}
-  healthUI: {fileID: 558967653}
-  roundUI: {fileID: 835178433}
+  healthUI: {fileID: 0}
+  roundUI: {fileID: 0}
 --- !u!114 &1178688743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17110,11 +17110,15 @@ MonoBehaviour:
   - name: Slowmo Turret
     cost: 200
     prefab: {fileID: 7542810279805621093, guid: a0d43ae597b1d034894bcdaa3cb0048f, type: 3}
-    towerType: water
+    towerType: hybrid
   - name: Dart Monkey
     cost: 170
     prefab: {fileID: 1300775646412901449, guid: 021704164055220449584a43e7053963, type: 3}
     towerType: hybrid
+  - name: Blue Bird
+    cost: 200
+    prefab: {fileID: 1300775646412901449, guid: a7ecea9a4601f9046a43d2d4fb9944a3, type: 3}
+    towerType: flying
 --- !u!114 &1501043488
 MonoBehaviour:
   m_ObjectHideFlags: 0
