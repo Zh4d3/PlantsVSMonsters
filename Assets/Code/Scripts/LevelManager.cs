@@ -53,4 +53,8 @@ public class LevelManager : MonoBehaviour {
         round++;
     }
 
+    public void IncreaseCurrencyAfterRound()
+    {
+        currency += (100 + round);
+    }
 }

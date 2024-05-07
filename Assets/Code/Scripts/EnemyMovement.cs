@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour {
     [Header("Attributes")]
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private int attackDamage = 1;
+    [SerializeField] public string enemyType = "ground";
 
     private Transform target;
     private int pathIndex = 0;

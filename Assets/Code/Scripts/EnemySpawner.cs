@@ -62,6 +62,7 @@ public class EnemySpawner : MonoBehaviour {
         timeSinceLastSpawn = 0f;
         currentWave++;
         LevelManager.main.IncreaseRound();
+        LevelManager.main.IncreaseCurrencyAfterRound();
         StartCoroutine(StartWave());
     }
 
@@ -70,7 +71,7 @@ public class EnemySpawner : MonoBehaviour {
 
         switch (currentWave) {
             case 1:
-                enemiesLeftToSpawn.Add(0, 20);
+                enemiesLeftToSpawn.Add(0, 5);
                 break;
             case 2:
                 enemiesLeftToSpawn.Add(0, 35);
