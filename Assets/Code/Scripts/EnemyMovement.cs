@@ -11,14 +11,16 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private int attackDamage = 1;
     [SerializeField] public string enemyType = "ground";
+    //[SerializeField] private float moveSpeedMultiplier = 1;
 
     private Transform target;
     private int pathIndex = 0;
     private int health = 100;
-
+    private bool isSpeedUp;
     private float baseSpeed;
 
     public void Start() {
+        isSpeedUp = false;
         baseSpeed = moveSpeed;
         target = LevelManager.main.path[pathIndex];
     }
@@ -42,7 +44,7 @@ public class EnemyMovement : MonoBehaviour {
     private void FixedUpdate() {
         Vector2 direction = (target.position - transform.position).normalized;
 
-        rb.velocity = direction * moveSpeed;
+        rb.velocity = direction * moveSpeed /* * moveSpeedMultiplier*/;
     }
 
     public void UpdateSpeed(float newSpeed) {
@@ -53,4 +55,27 @@ public class EnemyMovement : MonoBehaviour {
         moveSpeed = baseSpeed;
     }
 
+    /*public void ToggleSpeedUp() {
+        isSpeedUp = !isSpeedUp;
+        SpeedUp();
+    }
+
+    public void SpeedUp() {
+        if (isSpeedUp) {
+            Debug.Log("Enemies sped up");
+            moveSpeedMultiplier = 2;
+        } else {
+            Debug.Log("Enemies sped down");
+            moveSpeedMultiplier = 1;
+        }
+        UpdateExistingEnemiesSpeed();
+    }
+
+    private void UpdateExistingEnemiesSpeed() 
+    {
+        EnemyMovement[] enemies = FindObjectsOfType<EnemyMovement>();
+        foreach (EnemyMovement enemy in enemies) {
+            enemy.moveSpeedMultiplier = moveSpeedMultiplier;
+        }
+    }*/
 }

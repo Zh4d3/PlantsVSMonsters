@@ -18,4 +18,11 @@ public class UpgradeUIHandler : MonoBehaviour, IPointerEnterHandler, IPointerExi
         gameObject.SetActive(false);
     }
 
+    public void OnTowerSell()
+    {
+        mouse_over = false;
+        UIManager.main.SetHoveringState(false);
+        gameObject.SetActive(false);
+    }
+
 }

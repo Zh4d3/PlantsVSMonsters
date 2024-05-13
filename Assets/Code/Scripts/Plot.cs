@@ -9,11 +9,17 @@ public class Plot : MonoBehaviour {
     [SerializeField] private Color hoverColor;
 
     public GameObject towerObj;
-    public Turret turret;
+    public Dog dog;
+    /*public Penguin penguin;
+    public BlueBird blueBird;
+    public Goldfish goldfish;
+    public Unicorn unicorn;*/
     private Color startColor;
+    private UpgradesMenu upgradesMenu;
 
     private void Start() {
         startColor = sr.color;
+        upgradesMenu = UpgradesMenu.main;
     }
 
     private void OnMouseEnter() {
@@ -27,9 +33,28 @@ public class Plot : MonoBehaviour {
     private void OnMouseDown() {
         if (UIManager.main.IsHoveringUI()) return;
 
-        if (towerObj != null) {
-            turret.OpenUpgradeUI();
-            return;
+        if (towerObj != null) 
+        {
+            /*if (dog != null)
+            {*/
+                dog.OpenUpgradeUI();
+            /*}
+            else if (penguin != null)
+            {
+                penguin.OpenUpgradeUI();
+            }
+            else if (blueBird != null)
+            {
+                blueBird.OpenUpgradeUI();
+            }
+            else if (goldfish != null)
+            {
+                goldfish.OpenUpgradeUI();
+            }
+            else if (unicorn != null)
+            {
+                unicorn.OpenUpgradeUI();
+            }*/
         }
         
         Tower towerToBuild = BuildManager.main.GetSelectedTower();
@@ -49,7 +74,12 @@ public class Plot : MonoBehaviour {
         LevelManager.main.SpendCurrency(towerToBuild.cost);
 
         towerObj = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
-        turret = towerObj.GetComponent<Turret>();
+        dog = towerObj.GetComponent<Dog>();
+        /*penguin = towerObj.GetComponent<Penguin>();
+        blueBird = towerObj.GetComponent<BlueBird>();
+        goldfish = towerObj.GetComponent<Goldfish>();
+        unicorn = towerObj.GetComponent<Unicorn>();*/
+
     }
 
 }

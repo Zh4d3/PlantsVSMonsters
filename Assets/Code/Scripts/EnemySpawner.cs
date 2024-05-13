@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour {
     [Header("Attributes")]
     [SerializeField] private float enemiesPerSecond = 1f;
     [SerializeField] private float timeBetweenWaves = 5f;
+    //[SerializeField] private float roundSpeedMultiplier;
 
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
@@ -21,12 +22,15 @@ public class EnemySpawner : MonoBehaviour {
     private Dictionary<int, int> enemiesLeftToSpawn = new Dictionary<int, int>();
     private float eps; // enemies Per second
     private bool isSpawning = false;
+    private bool isSpeedUp;
 
     private void Awake() {
         onEnemyDestroy.AddListener(EnemyDestroyed);
     }
 
     private void Start() {
+        //roundSpeedMultiplier = 1;
+        isSpeedUp = false;
         StartCoroutine(StartWave());
     }
 
@@ -35,7 +39,7 @@ public class EnemySpawner : MonoBehaviour {
 
         timeSinceLastSpawn += Time.deltaTime;
 
-        if (timeSinceLastSpawn >= (1f / eps)) {
+        if (timeSinceLastSpawn >= (1f / (/*roundSpeedMultiplier * */ eps))) {
             SpawnEnemy();
             timeSinceLastSpawn = 0f;
         }
@@ -50,10 +54,15 @@ public class EnemySpawner : MonoBehaviour {
     }
 
     private IEnumerator StartWave() {
-        yield return new WaitForSeconds(timeBetweenWaves);
+        float remainingTime = timeBetweenWaves /*/ roundSpeedMultiplier*/;
+
+        while (remainingTime > 0) {
+            yield return new WaitForSeconds(1f);
+            remainingTime -= 1f /* * roundSpeedMultiplier*/;
+        }
 
         isSpawning = true;
-        eps = enemiesPerSecond;
+        eps = enemiesPerSecond /* * roundSpeedMultiplier*/;
         SetupEnemiesLeftToSpawn();
     }
 
@@ -61,8 +70,8 @@ public class EnemySpawner : MonoBehaviour {
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
-        LevelManager.main.IncreaseRound();
         LevelManager.main.IncreaseCurrencyAfterRound();
+        LevelManager.main.IncreaseRound();
         StartCoroutine(StartWave());
     }
 
@@ -71,7 +80,7 @@ public class EnemySpawner : MonoBehaviour {
 
         switch (currentWave) {
             case 1:
-                enemiesLeftToSpawn.Add(0, 5);
+                enemiesLeftToSpawn.Add(0, 20);
                 break;
             case 2:
                 enemiesLeftToSpawn.Add(0, 35);
@@ -135,14 +144,14 @@ public class EnemySpawner : MonoBehaviour {
                 enemiesLeftToSpawn.Add(1, 15);
                 enemiesLeftToSpawn.Add(2, 12);
                 enemiesLeftToSpawn.Add(3, 10);
-                enemiesLeftToSpawn.Add(4, 5);
+                //enemiesLeftToSpawn.Add(4, 5);
                 break;
             case 16:
                 enemiesLeftToSpawn.Add(2, 40);
                 enemiesLeftToSpawn.Add(3, 8);
                 break;
             case 17:
-                enemiesLeftToSpawn.Add(5, 1);
+                //enemiesLeftToSpawn.Add(5, 1);
                 break;
             default:
                 Debug.Log("Wave " + currentWave + " not implemented yet!");
@@ -172,4 +181,23 @@ public class EnemySpawner : MonoBehaviour {
         }
         return true;
     }
+
+    /*public void ToggleSpeedUp() 
+    {
+        isSpeedUp = !isSpeedUp;
+        SpeedUp();
+    }
+
+    public void SpeedUp() 
+    {
+        if (isSpeedUp) 
+        {
+            Debug.Log("Round sped up");
+            roundSpeedMultiplier = 2;
+        } else 
+        {
+            Debug.Log("Rounrd sped down");
+            roundSpeedMultiplier = 1;
+        }
+    }*/
 }

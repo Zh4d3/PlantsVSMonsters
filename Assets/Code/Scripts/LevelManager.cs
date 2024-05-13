@@ -8,8 +8,9 @@ public class LevelManager : MonoBehaviour {
 
     public Transform startPoint;
     public Transform[] path;
+    public GameOverScreen GameOverScreen;
 
-    public int currency;
+    public double currency;
     public int health;
     public int round;
 
@@ -18,13 +19,30 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void Start() {
-        currency = 200;
+        currency = 650;
         health = 100;
         round = 1;
     }
 
     public void IncreaseCurrency(int amount) {
-        currency += amount;
+        if (round <= 50)
+        {
+            currency += amount;
+        } else if (round <= 60)
+        {
+            currency += amount * 0.5;
+        } else if (round <= 85)
+        {
+            currency += amount* 0.2;
+        } else if (round <= 100) 
+        {
+            currency += amount * 0.1;
+        } else if (round <= 120) {
+            currency += amount * 0.05;
+        } else
+        {
+            currency += amount * 0.02;
+        }
     }
 
     public bool SpendCurrency(int amount) {
@@ -41,7 +59,7 @@ public class LevelManager : MonoBehaviour {
         if (amount >= health)
         {
             health = 0;
-            Debug.Log("Game Over");
+            GameOverScreen.Setup(round);
         } else
         {
             health -= amount;
