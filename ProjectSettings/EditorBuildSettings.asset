@@ -14,52 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level 1.unity
     guid: 5bfe615c551c09c4ea16f177f0ddd7f7
-<<<<<<< Updated upstream
-=======
   - enabled: 1
-    path: Assets/Level 2.unity
+    path: Assets/Level_2.unity
     guid: 9c86e7898b5451b4086fbc2a8d212f79
->>>>>>> Stashed changes
-  - enabled: 0
-    path: Assets/RestOfLevels/Level 2.unity
-    guid: 133a72b4c9103d84bbdcb7448e3b73c6
-  - enabled: 0
-    path: Assets/RestOfLevels/Level 3.unity
-    guid: 2336db699b20a27488d67cb0334532ca
-  - enabled: 0
-    path: Assets/RestOfLevels/Level 4.unity
-    guid: e35f3e5951c054c4fabc3c9238369384
-  - enabled: 0
-    path: Assets/RestOfLevels/Level 5.unity
-    guid: 03db0b21cd069114c9d30313b8606c92
-  - enabled: 0
-    path: Assets/RestOfLevels/Level 6.unity
-    guid: 2d5b62a5f2c47fd4a9912b2f8df7052e
-  - enabled: 0
-    path: Assets/RestOfLevels/Level 7.unity
-    guid: ced1a2d2257f1264b802080826172f9b
-  - enabled: 0
-    path: Assets/RestOfLevels/Level 8.unity
-    guid: 76476ab87e5203b4e852b7d13f4b6797
-  - enabled: 0
-    path: Assets/RestOfLevels/Level 9.unity
-    guid: 5cca45922ed67724cafcdd72f92dc470
-  - enabled: 0
-    path: Assets/RestOfLevels/Level 10.unity
-    guid: f58f261dda5922e4c982a784cdb41f5e
-  - enabled: 0
-    path: Assets/RestOfLevels/Level 11.unity
-    guid: 67431158acb02d04fb71d9d7bd6b8106
-  - enabled: 0
-    path: Assets/RestOfLevels/Level 12.unity
-    guid: 4791ca5ed99607b498bc16e3be43488a
-  - enabled: 0
-    path: Assets/RestOfLevels/Level 13.unity
-    guid: 4363608432fbebf4d8d9802cd19ad8f1
-  - enabled: 0
-    path: Assets/RestOfLevels/Level 14.unity
-    guid: e3391111a20de94439c0a7ecc734a0e6
-  - enabled: 0
-    path: Assets/RestOfLevels/Level 15.unity
-    guid: 3e614f7796390124cb7ed12d8a24ed45
   m_configObjects: {}

@@ -154,7 +154,7 @@ public class EnemySpawner : MonoBehaviour {
                 //enemiesLeftToSpawn.Add(5, 1);
                 break;
             default:
-                Debug.Log("Wave " + currentWave + " not implemented yet!");
+                Debug.Log("Congratulatios, you have succesfully defeated every wave and won the game!");
                 break;
         }
     }
