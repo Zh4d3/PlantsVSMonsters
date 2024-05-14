@@ -90,6 +90,10 @@ public class BlueBird : MonoBehaviour {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2)transform.position, 0f, enemyMask);
 
         if (hits.Length > 0) {
+            if (towerType == "ground") 
+            {
+                if (hits[0].collider.transform.GetComponent<EnemyMovement>().enemyType == "flying") return;
+            }
             target = hits[0].transform;
         }
     }
@@ -286,10 +290,10 @@ public class BlueBird : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    private void OnDrawGizmosSelected() {
+    */private void OnDrawGizmosSelected() {
         Handles.color = Color.cyan;
         Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
-    }*/
+    }
 
     /*public void ToggleSpeedUp() {
         isSpeedUp = !isSpeedUp;
