@@ -164,8 +164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7686279545043956402}
-  moveSpeed: 1.4
-  attackDamage: 15
+  moveSpeed: 3.2
+  attackDamage: 4
   enemyType: ground
 --- !u!114 &-1361853956572204666
 MonoBehaviour:
@@ -179,8 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972f6ac807913fa43b84a2d588147c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 15
-  currencyWorth: 15
+  hitPoints: 4
+  currencyWorth: 4
 --- !u!95 &3451417976835299898
 Animator:
   serializedVersion: 5

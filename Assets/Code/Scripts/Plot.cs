@@ -30,56 +30,32 @@ public class Plot : MonoBehaviour {
         sr.color = startColor;
     }
 
-    private void OnMouseDown() {
+    private void OnMouseDown() 
+    {
         if (UIManager.main.IsHoveringUI()) return;
 
         if (towerObj != null) 
         {
-            /*if (dog != null)
-            {*/
-                dog.OpenUpgradeUI();
-            /*}
-            else if (penguin != null)
-            {
-                penguin.OpenUpgradeUI();
-            }
-            else if (blueBird != null)
-            {
-                blueBird.OpenUpgradeUI();
-            }
-            else if (goldfish != null)
-            {
-                goldfish.OpenUpgradeUI();
-            }
-            else if (unicorn != null)
-            {
-                unicorn.OpenUpgradeUI();
-            }*/
-        }
-        
-        Tower towerToBuild = BuildManager.main.GetSelectedTower();
-
-
-        if (towerToBuild.towerType == "water")
+            dog.OpenUpgradeUI();
+        } else
         {
-            Debug.Log("Tower not suitable for terrain");
-            return;
+            Tower towerToBuild = BuildManager.main.GetSelectedTower();
+
+
+            if (towerToBuild.towerType == "water") {
+                Debug.Log("Tower not suitable for terrain");
+                return;
+            }
+
+            if (towerToBuild.cost > LevelManager.main.currency) {
+                Debug.Log("You can't afford this tower");
+                return;
+            }
+
+            LevelManager.main.SpendCurrency(towerToBuild.cost);
+
+            towerObj = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
+            dog = towerObj.GetComponent<Dog>();
         }
-
-        if (towerToBuild.cost > LevelManager.main.currency) {
-            Debug.Log("You can't afford this tower");
-            return;
-        }
-
-        LevelManager.main.SpendCurrency(towerToBuild.cost);
-
-        towerObj = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
-        dog = towerObj.GetComponent<Dog>();
-        /*penguin = towerObj.GetComponent<Penguin>();
-        blueBird = towerObj.GetComponent<BlueBird>();
-        goldfish = towerObj.GetComponent<Goldfish>();
-        unicorn = towerObj.GetComponent<Unicorn>();*/
-
     }
-
 }

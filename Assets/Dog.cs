@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEditor;
 using UnityEngine.Events;
 
 public class Dog : MonoBehaviour {
@@ -59,19 +58,24 @@ public class Dog : MonoBehaviour {
         //upgradeButton.onClick.AddListener(Upgrade);
     }
 
-    private void Update() {
-        if (target == null) {
+    private void Update() 
+    {
+        if (target == null) 
+        {
             FindTarget();
             return;
         }
 
-        if (!CheckTargetIsInRange()) {
+        if (!CheckTargetIsInRange()) 
+        {
             target = null;
-        } else {
+        } else 
+        {
 
             timeUntilFire += Time.deltaTime;
 
-            if (timeUntilFire >= 1f / bps) {
+            if (timeUntilFire >= 1f / bps) 
+            {
                 Shoot();
                 timeUntilFire = 0f;
             }
@@ -229,7 +233,7 @@ public class Dog : MonoBehaviour {
             if (UpgradePrice > LevelManager.main.currency) return;
             LevelManager.main.SpendCurrency(UpgradePrice);
             rangeUpgradePrice.text = "Very Long Range (" + 170.ToString() + ")";
-            rangeUpgradeDescription.text = "Gains +8 range & Shoots 10% faster.";
+            rangeUpgradeDescription.text = "Gains +8 range & Shoots 10% faster & Can detect ghosts.";
             targetingRange += 0.8f;
             rangeLvl++;
             towerPrice += UpgradePrice;
@@ -242,6 +246,7 @@ public class Dog : MonoBehaviour {
             rangeUpgradeDescription.text = "Gains +8 range & Damages 3 extra per shot.";
             targetingRange += 0.8f;
             bps *= 1.1f;
+            towerType = "flying";
             rangeLvl++;
             towerPrice += UpgradePrice;
         } else if (rangeLvl == 2) // Crossbow
@@ -294,11 +299,6 @@ public class Dog : MonoBehaviour {
         upgradeUIHandler.OnTowerSell();
 
         Destroy(gameObject);
-    }
-
-    private void OnDrawGizmosSelected() {
-        Handles.color = Color.cyan;
-        Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
     }
 
     /*public void ToggleSpeedUp() {

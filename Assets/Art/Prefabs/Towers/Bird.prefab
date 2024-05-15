@@ -539,8 +539,8 @@ MonoBehaviour:
     m_Bits: 64
   bulletPrefab: {fileID: 3933779628820494733, guid: 2dc33c20432c5f447b98b32b31a5ae58, type: 3}
   firingPoint: {fileID: 2416045989057235268}
-  targetingRange: 2
-  bps: 0.4
+  targetingRange: 4
+  bps: 0.8
   damage: 1
   towerBasePrice: 425
   towerType: flying

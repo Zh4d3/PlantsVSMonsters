@@ -12,7 +12,6 @@ public class Health : MonoBehaviour {
 
     public void TakeDamage(int dmg) {
         hitPoints -= dmg;
-
         if (hitPoints <= 0 && !isDestroyed) {
             EnemySpawner.onEnemyDestroy.Invoke();
             LevelManager.main.IncreaseCurrency(currencyWorth);

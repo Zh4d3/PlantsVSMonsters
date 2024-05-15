@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour {
 
     [Header("References")]
     [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private WinScreen winScreen;
 
     [Header("Attributes")]
     [SerializeField] private float enemiesPerSecond = 1f;
@@ -23,6 +24,7 @@ public class EnemySpawner : MonoBehaviour {
     private float eps; // enemies Per second
     private bool isSpawning = false;
     private bool isSpeedUp;
+    private bool hasWon = false;
 
     private void Awake() {
         onEnemyDestroy.AddListener(EnemyDestroyed);
@@ -32,6 +34,7 @@ public class EnemySpawner : MonoBehaviour {
         //roundSpeedMultiplier = 1;
         isSpeedUp = false;
         StartCoroutine(StartWave());
+        hasWon = false;
     }
 
     private void Update() {
@@ -66,7 +69,8 @@ public class EnemySpawner : MonoBehaviour {
         SetupEnemiesLeftToSpawn();
     }
 
-    private void EndWave() {
+    private void EndWave() 
+    {
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
@@ -144,14 +148,16 @@ public class EnemySpawner : MonoBehaviour {
                 enemiesLeftToSpawn.Add(1, 15);
                 enemiesLeftToSpawn.Add(2, 12);
                 enemiesLeftToSpawn.Add(3, 10);
-                //enemiesLeftToSpawn.Add(4, 5);
                 break;
             case 16:
                 enemiesLeftToSpawn.Add(2, 40);
                 enemiesLeftToSpawn.Add(3, 8);
                 break;
             case 17:
-                //enemiesLeftToSpawn.Add(5, 1);
+                enemiesLeftToSpawn.Add(4, 1);
+                break;
+            case 18:
+                winScreen.Setup();
                 break;
             default:
                 Debug.Log("Congratulatios, you have succesfully defeated every wave and won the game!");

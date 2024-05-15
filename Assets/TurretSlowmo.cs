@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 public class TurretSlowmo : MonoBehaviour {
 
@@ -44,10 +43,5 @@ public class TurretSlowmo : MonoBehaviour {
         yield return new WaitForSeconds(freezeTime);
 
         em.ResetSpeed();
-    }
-
-    private void OnDrawGizmosSelected() {
-        Handles.color = Color.cyan;
-        Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
     }
 }

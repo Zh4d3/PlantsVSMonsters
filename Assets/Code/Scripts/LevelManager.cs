@@ -55,7 +55,8 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
-    public void LoseHealth(int amount) {
+    public void LoseHealth(int amount) 
+    {
         if (amount >= health)
         {
             health = 0;

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor;
 
 public class House : MonoBehaviour {
 
@@ -118,10 +117,6 @@ public class House : MonoBehaviour {
         return targetingRangeBase * Mathf.Pow(level, 0.4f);
     }
 
-    private void OnDrawGizmosSelected() {
-        Handles.color = Color.cyan;
-        Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
-    }
 
     public void ToggleSpeedUp() {
         isSpeedUp = !isSpeedUp;

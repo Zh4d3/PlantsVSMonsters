@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEditor;
 using UnityEngine.Events;
 
 public class BlueBird : MonoBehaviour {
@@ -26,8 +25,8 @@ public class BlueBird : MonoBehaviour {
     [SerializeField] TextMeshProUGUI selectedTowersPopCount;*/
 
     [Header("Attribute")]
-    [SerializeField] private float targetingRange = 2f;
-    [SerializeField] private float bps = 0.4f;
+    [SerializeField] private float targetingRange = 4f;
+    [SerializeField] private float bps = 0.8f;
     [SerializeField] private int damage = 1;
     [SerializeField] private int towerBasePrice = 425;
     [SerializeField] private string towerType = "flying";
@@ -290,11 +289,7 @@ public class BlueBird : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    */private void OnDrawGizmosSelected() {
-        Handles.color = Color.cyan;
-        Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
-    }
-
+    */
     /*public void ToggleSpeedUp() {
         isSpeedUp = !isSpeedUp;
         if (isSpeedUp) {
